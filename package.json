@@ -2,9 +2,13 @@
   "devDependencies": {
     "babel-preset-es2015": "^6.14.0",
     "browser-sync": "^2.14.0",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "gulp-sass": "^2.3.2"
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
   },
   "name": "crab-tabs",
   "description": "a tabs plugin of javascript",
@@ -13,9 +17,13 @@
   "dependencies": {
     "babel-preset-es2015": "^6.14.0",
     "browser-sync": "^2.14.0",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "gulp-sass": "^2.3.2"
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

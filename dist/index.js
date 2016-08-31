@@ -3,8 +3,6 @@ if (tabs) {
     tabs = Tabs.init(tabs, {
         defaultPane: 1,    // 默认显示的pane
         position: 'bottom',
-        headCls: 'crab-head,as',
-        // headWidth: '100%',
-        // slideable: false
+        // headWidth: '100%'
     });
 }
