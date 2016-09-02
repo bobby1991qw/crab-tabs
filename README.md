@@ -1,2 +1,5 @@
 # crab-tabs
-a tabs plugin of javascript
+一个js的tab插件
+
+## 特性
+
