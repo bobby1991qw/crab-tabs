@@ -156,7 +156,7 @@
                     style = utils.createElement('style', {
                         innerText: [`.crab-headers:after{ width: ${headWidth} ; ${{ top: 'bottom: 0', bottom: 'top: 0' }[options.position]} }`,
                             `.crab-head{width: ${headWidth}}`,
-                            utils.isMobile && `.crab-panes{ transform: translateX(${-options.defaultPane * 100}%) }`,
+                            utils.getAgent().mobile && `.crab-panes{ transform: translateX(${-options.defaultPane * 100}%) }`,
                             `.crab-tabs{ flex-direction:${{ top: 'column', bottom: 'column-reverse' }[options.position]} }`,
                         ].join('')
                     });
