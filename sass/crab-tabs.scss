@@ -1,0 +1,78 @@
+.crab-tabs{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    height: 100%;
+    overflow: hidden;    
+}
+
+.crab-headers{    
+    display: block;
+    font-size: 14px;
+    position: relative;
+    cursor: default;
+}
+
+.crab-tabs.mobile .crab-headers{
+    overflow: hidden;
+}
+
+.crab-headers:after{
+    content: '';
+    position: absolute;
+    display: block;
+    height: 4px;
+    background: #26b9ff;
+    transition: left .25s ease-in-out;
+}
+
+.crab-headers .crab-head{
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;    
+    transition: all .25s ease;
+}
+
+.crab-head.active{        
+    color: #26b9ff;
+}
+
+.crab-panes{    
+    position: relative;    
+    width: 100%;
+    height: 100%;
+    // font-size: 0;    
+    transition: transform .25s ease-in-out;
+    will-change: transform;
+}
+
+.crab-tabs.mobile .crab-panes{
+    white-space: nowrap; 
+}
+
+.crab-pane{
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    font-size: initial;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.crab-tabs:not(.mobile) .crab-pane{
+    opacity: 0;
+    transition: transform .25s ease-in-out, opacity .25s ease-in-out;
+    will-change: transform, opacity;
+}
+
+.crab-tabs:not(.mobile) .crab-pane.active{    
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.crab-tabs.mobile .crab-pane{
+    position: initial;
+}
