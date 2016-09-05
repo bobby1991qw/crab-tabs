@@ -13,6 +13,22 @@
 
                 return ele;
             },
+            extends(dest, source) {
+                const args = [].slice.call(arguments, 0);
+
+                if (args.length > 2) {
+                    return this.extends.apply(this, args.slice(1))
+                } else {
+                    for (let key in source) {
+                        if (source.hasOwnProperty(key)) {
+                            const value = source[key];
+                            dest[key] = value;
+                        }
+                    }
+
+                    return dest;
+                }
+            },
             getAgent() {
                 const userAgent = navigator.userAgent;
                 const mobilePattern = /mobile/i;
@@ -133,14 +149,14 @@
                 }
 
                 const root = this.root = ele,
-                    options = this.opts = Object.assign({}, this.defaults, opts),
+                    options = this.opts = utils.extends({}, this.defaults, opts),
                     headers = this.headers = [].slice.call(ele.querySelectorAll(`.${this.defaults.headCls}`), 0),
                     headWidth = this.headWidth = options.headWidth === true ? `${100 / headers.length}%` : options.headWidth,
                     dynamicStyle = utils.createElement('style', { id: 'dynamicStyle' }),
                     style = utils.createElement('style', {
                         innerText: [`.crab-headers:after{ width: ${headWidth} ; ${{ top: 'bottom: 0', bottom: 'top: 0' }[options.position]} }`,
                             `.crab-head{width: ${headWidth}}`,
-                            `.crab-panes{ transform: translateX(${-options.defaultPane * 100}%) }`,
+                            utils.isMobile && `.crab-panes{ transform: translateX(${-options.defaultPane * 100}%) }`,
                             `.crab-tabs{ flex-direction:${{ top: 'column', bottom: 'column-reverse' }[options.position]} }`,
                         ].join('')
                     });
