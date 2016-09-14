@@ -23,10 +23,6 @@
     -o-webkit-user-select: none;    
 }
 
-.crab-tabs.mobile .crab-headers{
-    overflow: hidden;
-}
-
 .crab-headers:after{
     content: '';
     position: absolute;
@@ -80,6 +76,7 @@
 
 .crab-tabs:not(.mobile) .crab-pane.active{    
     transform: translateX(0);
+    z-index: 9999;
     opacity: 1;
 }
 

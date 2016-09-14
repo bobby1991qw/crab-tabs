@@ -208,14 +208,12 @@
 
                     // 旧的tab消失    
                     panes[data.prevPane].style.transform = `translateX(${direct * 10}%)`;
-                    // setTimeout(function () {
-                    //     // panes[data.prevPane].style.top = '120%';
-                    // }, 250);
+                    panes[data.prevPane].style.zIndex = 1;
                     panes[data.prevPane].classList.remove('active');
 
                     // 新的tab出现
                     panes[data.activePane].style.transform = 'translateX(0)';
-                    // panes[data.activePane].style.top = 0;
+                    panes[data.activePane].style.zIndex = 9999;
                     panes[data.activePane].classList.add('active');
                 }
 
