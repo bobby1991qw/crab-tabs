@@ -3,7 +3,11 @@
     display: -webkit-flex;
     display: flex;
     position: relative;
-    height: 100%;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction:column; 
     overflow: hidden;    
 }
 
@@ -12,6 +16,10 @@
     font-size: 14px;
     position: relative;
     cursor: default;
+    -webkit-webkit-user-select: none;
+    -moz-webkit-user-select: none;
+    -ms-webkit-user-select: none;
+    -o-webkit-user-select: none;    
 }
 
 .crab-tabs.mobile .crab-headers{

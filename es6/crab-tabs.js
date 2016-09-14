@@ -200,7 +200,7 @@
 
                 if (utils.isMobile) {
                     // 移动端
-                    styles = styles.concat(`.crab-panes{ transform: translateX(${-data.activePane * 100}%) }`);
+                    styles = styles.concat(`.crab-panes{ transform: translateX(${-data.activePane * 101}%) }`);
                 } else {
                     // pc端
                     const direct = data.prevPane - data.activePane,
@@ -250,9 +250,10 @@
                 const headers = ui.headers;
                 headers.forEach((head, i) => {
                     utils.addEventListener(head, 'click', () => {
-                        console.log(1);
-                        data.changePane(i);
-                        ui.changePane();
+                        if (data.activePane !== i) {
+                            data.changePane(i);
+                            ui.changePane();
+                        }
                     });
                 });
 
