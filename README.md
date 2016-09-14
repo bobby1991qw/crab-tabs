@@ -8,7 +8,7 @@
 
 ##查看demo
 
-[查看在线demo](https://github.com/bobby1991qw/crab-tabs)
+[查看在线demo](https://bobby1991qw.github.io/crab-tabs)
 
 1. **下载或克隆这个项目**
 
