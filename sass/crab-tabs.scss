@@ -50,10 +50,11 @@
 .crab-panes{    
     position: relative;    
     width: 100%;
-    height: 100%;
-    // font-size: 0;    
+    height: 100%;    
     transition: transform .25s ease-in-out;
     will-change: transform;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .crab-tabs.mobile .crab-panes{
